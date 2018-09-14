@@ -24,8 +24,7 @@ from dateutil.rrule import rrule, MONTHLY
 savepath="/group_workspaces/cems2/nceo_generic/model_data/CAMS/" 
 server = ECMWFDataServer()
 
-#start_date=datetime.date(2017,9,1)
-#end_date=datetime.date(2017,9,30)
+#Main function to download data
 def download_ecmwf(start_date,end_date,vars_pl,target):
     dateST=start_date
     dateED=end_date
@@ -94,9 +93,9 @@ strt_dt = datetime.date(2012,8,1)
 today_dt = datetime.date.today()
 end_dt = datetime.date(today_dt.year,today_dt.month-1,today_dt.day)
 
-#selected range
-strt_dt = datetime.date(2017,8,1)
-end_dt = datetime.date(2017,9,30)
+#selected range (CLARIFY PERIOD)
+#strt_dt = datetime.date(2017,8,1)
+#end_dt = datetime.date(2017,9,30)
 
 month_dates = [dt for dt in rrule(MONTHLY, dtstart=strt_dt, until=end_dt)]
 for i in range(len(month_dates)):
